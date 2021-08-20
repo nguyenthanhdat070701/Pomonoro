@@ -40,11 +40,16 @@ function addTodo(event) {
 }
 function deleteTodo(e) {
     const item = e.target;
-    const todo = item.parentElement;
-    todo.classList.add("fall");
-    todo.addEventListener('transitionend', function () {
+    console.l
+    if (item.classList[0] === "delete-btn") {
+        const todo = item.parentElement;
+        todo.classList.add("fall");
         todo.remove();
-    })
+    }
+    if (item.classList[0] === "complete-btn") {
+        const todo = item.parentElement;
+        todo.classList.toggle("completed");
+    }
 
 }
 
